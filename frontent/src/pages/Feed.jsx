@@ -10,7 +10,7 @@ const Feed = () => {
     const currentUser = JSON.parse(localStorage.getItem('user'))
 
     const fetchPosts = () => {
-        axios.get("http://localhost:3000/api/posts", { withCredentials: true })
+        axios.get("https://social-post-application-ntj3.onrender.com/api/posts", { withCredentials: true })
         .then((res) => setPosts(res.data.posts))
         .catch((err) => console.log(err))
     }
@@ -23,7 +23,7 @@ const Feed = () => {
         if (!currentUser) return alert("Please login to like posts")
         try {
             const token = localStorage.getItem('token')
-            const res = await axios.post(`http://localhost:3000/api/posts/${postId}/like`, {}, {
+            const res = await axios.post(`https://social-post-application-ntj3.onrender.com/api/posts/${postId}/like`, {}, {
                 headers: { Authorization: `Bearer ${token}` },
                 withCredentials: true
             })
@@ -37,7 +37,7 @@ const Feed = () => {
         if (!window.confirm("Are you sure you want to delete this post?")) return;
         try {
             const token = localStorage.getItem('token')
-            await axios.delete(`http://localhost:3000/api/posts/${postId}`, {
+            await axios.delete(`https://social-post-application-ntj3.onrender.com/api/posts/${postId}`, {
                 headers: { Authorization: `Bearer ${token}` },
                 withCredentials: true
             })
@@ -68,7 +68,7 @@ const Feed = () => {
 
             try {
                 const token = localStorage.getItem('token')
-                const res = await axios.post(`http://localhost:3000/api/posts/${post._id}/comment`, { text: commentText }, {
+                const res = await axios.post(`https://social-post-application-ntj3.onrender.com/api/posts/${post._id}/comment`, { text: commentText }, {
                     headers: { Authorization: `Bearer ${token}` },
                     withCredentials: true
                 })

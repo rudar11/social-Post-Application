@@ -12,7 +12,7 @@ const CreatePost = () => {
         
         try {
             const token = localStorage.getItem('token') // Auth token nikala
-            await axios.post('http://localhost:3000/api/posts', formData, {
+            await axios.post('https://social-post-application-ntj3.onrender.com/api/posts', formData, {
                 headers: { Authorization: `Bearer ${token}` }, // Token backend ko bheja
                 withCredentials: true
             })

@@ -15,7 +15,7 @@ const Auth = () => {
         const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register'
         
         try {
-            const res = await axios.post(`http://localhost:3000${endpoint}`, data, {
+            const res = await axios.post(`https://social-post-application-ntj3.onrender.com${endpoint}`, data, {
                 withCredentials: true
             })
             // Token ko localStorage me save kar rahe hain taaki aage use ho
