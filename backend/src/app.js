@@ -10,7 +10,7 @@ const app = express();
 
 // Middlewares Setup
 app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:3000"], // Frontend ports
+    origin: ["http://localhost:5173", "http://localhost:3000" , "https://social-post-application-dun.vercel.app"], // Frontend ports
     credentials: true
 }));
 app.use(cookieparser());
