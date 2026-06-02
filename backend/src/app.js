@@ -8,7 +8,7 @@ const cors = require('cors');
 const authRouter = require('./routes/auth.routes');
 const postModel = require('./models/post.models');
 const uploadfile = require('./services/storage.services');
-const isAuthenticated = require('./middleware/auth.milleware'); // Teri file ka naam yahi rakha hai
+const isAuthenticated = require('./middleware/auth.middleware'); // Teri file ka naam yahi rakha hai
 
 const app = express();
 
