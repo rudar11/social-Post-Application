@@ -18,6 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+// --- HEALTH CHECK ROUTE (Server status check karne ke liye) ---
+app.get('/', (req, res) => {
+    res.send("<h1>Server is running! 🚀</h1>");
+});
+
 // --- ROUTES ---
 app.use('/api/auth', authRouter);
 app.use('/api/posts', postRouter); 
